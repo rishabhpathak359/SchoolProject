@@ -7,7 +7,7 @@ const SocialMediaLinks = () => {
       <li>
         <a
           target="_blank"
-          href="https://www.facebook.com/codeutsava/"
+          href="#"
           className="bg-blue-500 rounded-full p-2 hover:bg-blue-600 transition duration-300"
         >
           <svg
@@ -25,7 +25,7 @@ const SocialMediaLinks = () => {
       <li>
         <a
           target="_blank"
-          href="https://www.instagram.com/codeutsavanitrr/"
+          href="#"
           className="bg-purple-500 rounded-full p-2 hover:bg-purple-600 transition duration-300"
         >
           <svg
@@ -43,7 +43,7 @@ const SocialMediaLinks = () => {
       <li>
         <a
           target="_blank"
-          href="https://twitter.com/codeutsavanitrr?lang=en"
+          href="#"
           className="bg-blue-400 rounded-full p-2 hover:bg-blue-500 transition duration-300"
         >
           <svg
@@ -61,7 +61,7 @@ const SocialMediaLinks = () => {
       <li>
         <a
           target="_blank"
-          href="https://www.linkedin.com/company/codeutsava/"
+          href="#"
           className="bg-blue-600 rounded-full p-2 hover:bg-blue-700 transition duration-300"
         >
           <svg
