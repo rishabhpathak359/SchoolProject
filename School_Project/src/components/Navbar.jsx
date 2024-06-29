@@ -8,33 +8,38 @@ import Fire from '../assets/Cbse_Corner/FireNOC.pdf';
 import ParentTeacher from '../assets/Cbse_Corner/ParentTeacherAssosciation.pdf';
 import RegisterCert from '../assets/Cbse_Corner/RegistrationCertificate.pdf';
 import SChoolManaging from '../assets/Cbse_Corner/SchoolManagingCommitte.pdf';
-import Water1 from '../assets/Cbse_Corner/WaterAnalysis1.pdf';
-import Water2 from '../assets/Cbse_Corner/WaterAnalysis2.pdf';
+import Water1 from '../assets/Cbse_Corner/WaterTestingCertificate.pdf';
 import LandCertificate from '../assets/Cbse_Corner/LandCertificate.pdf';
 import SocietyRegistration from '../assets/Cbse_Corner/SocietyRegistration.pdf';
 import SafeDrinkingAndSanitary from '../assets/Cbse_Corner/SafeDrinking.pdf';
+import Mandatory from '../assets/Cbse_Corner/MandatoryPublicDisclosure.pdf';
+import Self from '../assets/Cbse_Corner/SelfDeclaration.pdf';
+import NOCFromState from '../assets/Cbse_Corner/NOCFromStateGovernment.pdf';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
+
   const navItems = {
-    "About Us": 5,
+    "About Us": "#about",
     "Cbse Corner": {
+      "Society Registration Certificate": SocietyRegistration,
+      "Recognition Certificate from Deo": RegisterCert,
+      "NOC from State Government":NOCFromState ,
       "Building Safety Certificate": safetyCert,
-      "Calendar 24-25": Calend,
-      "Fee Structure": Fee,
-      "Fire NOC": Fire,
-      "Parent Teacher Association": ParentTeacher,
-      "Registration Certificate": RegisterCert,
-      "School Managing Committee": SChoolManaging,
-      "Water Analysis 1": Water1,
-      "Water Analysis 2": Water2,
+      "Safe Drinking Water And Sanitation Certificate": SafeDrinkingAndSanitary,
+      "Water Testing report": Water1,
+      "Fire Certificate ": Fire,
       "Land Certificate": LandCertificate,
-      "Society Registration": SocietyRegistration,
-      "Safe Drinking And Sanitary": SafeDrinkingAndSanitary,
+      "School Management Committee": SChoolManaging,
+      "Parents Teachers Association": ParentTeacher,
+      "Academic Calendar": Calend,
+      "Fee Structure 24-25": Fee,
+      "Self Certification": Self,
+      "Mandatory Public Disclosure": Mandatory,
     },
-    "Admission": 6,
-    "Gallery": 5,
+    "Admission": "/admission",
+    "Gallery": "#gallery",
   };
 
   useEffect(() => {
@@ -72,9 +77,8 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-gray-800 text-xl font-bold">
           <a href='/'>
-          <img 
-          className="w-44" src={L} alt="Logo" />
-            </a>
+            <img className="w-44" src={L} alt="Logo" />
+          </a>
         </div>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-gray-800 focus:outline-none">
@@ -86,21 +90,25 @@ const Navbar = () => {
           <ul className="flex flex-col mt-4 cursor-pointer">
             {Object.keys(navItems).map((item, index) => (
               <li className="border-b border-gray-200" key={index}>
-                <button
-                  className="py-3 px-6 w-full flex items-center justify-between text-lg text-gray-800"
-                  onClick={() => toggleAccordion(index)}
-                >
-                  {item}
-                  {typeof navItems[item] === 'object' && (
-                    <svg className={`w-4 h-4 fill-current transform ${activeIndex === index ? 'rotate-180' : 'rotate-0'}`} viewBox="0 0 20 20">
-                      <path d="M5.25 6.75l4.25 4.25 4.25-4.25" />
-                    </svg>
-                  )}
-                </button>
-                {typeof navItems[item] === 'object' && (
-                  <div className={`ml-6 ${activeIndex === index ? 'block' : 'hidden'}`}>
-                    {renderSubitems(navItems[item])}
-                  </div>
+                {typeof navItems[item] === 'object' ? (
+                  <>
+                    <button
+                      className="py-3 px-6 w-full flex items-center justify-between text-lg text-gray-800"
+                      onClick={() => toggleAccordion(index)}
+                    >
+                      {item}
+                      <svg className={`w-4 h-4 fill-current transform ${activeIndex === index ? 'rotate-180' : 'rotate-0'}`} viewBox="0 0 20 20">
+                        <path d="M5.25 6.75l4.25 4.25 4.25-4.25" />
+                      </svg>
+                    </button>
+                    <div className={`ml-6 ${activeIndex === index ? 'block' : 'hidden'}`}>
+                      {renderSubitems(navItems[item])}
+                    </div>
+                  </>
+                ) : (
+                  <a href={navItems[item]} className="block py-3 px-6 text-lg text-gray-800">
+                    {item}
+                  </a>
                 )}
               </li>
             ))}
@@ -111,24 +119,30 @@ const Navbar = () => {
           <ul className="flex md:flex-row md:space-x-6 text-gray-800 cursor-pointer">
             {Object.keys(navItems).map((item, index) => (
               <li className="relative group" key={index}>
-                <button className="py-2 px-2 flex items-center text-lg">
-                  {item}
-                  {typeof navItems[item] === 'object' && (
-                    <svg className="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20">
-                      <path d="M5.25 6.75l4.25 4.25 4.25-4.25" />
-                    </svg>
-                  )}
-                </button>
-                {typeof navItems[item] === 'object' && (
-                  <div className="absolute w-[280px] left-0 top-full hidden bg-white border border-gray-200 group-hover:block min-w-full shadow-md">
-                    {renderSubitems(navItems[item])}
-                  </div>
+                {typeof navItems[item] === 'object' ? (
+                  <>
+                    <button className="py-2 px-2 flex items-center text-lg">
+                      {item}
+                      <svg className="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M5.25 6.75l4.25 4.25 4.25-4.25" />
+                      </svg>
+                    </button>
+                    <div className="absolute w-[280px] left-0 top-full hidden bg-white border border-gray-200 group-hover:block min-w-full shadow-md">
+                      {renderSubitems(navItems[item])}
+                    </div>
+                  </>
+                ) : (
+                  <a href={navItems[item]} className="py-2 px-2 flex items-center text-lg">
+                    {item}
+                  </a>
                 )}
               </li>
             ))}
+            <a href='#contact'>
             <li className="relative py-2 px-2 flex items-center text-lg">
               Contact Us
             </li>
+            </a>
           </ul>
         </div>
       </div>

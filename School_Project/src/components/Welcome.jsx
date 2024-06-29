@@ -6,7 +6,7 @@ const Welcome = () => {
   return (
     <div className="flex flex-col items-center my-8">
       {/* Main Heading */}
-      <h1 className="text-4xl md:text-5xl font-semibold mb-10 text-center">Welcome</h1>
+      <h1 className="text-4xl md:text-5xl  font-extrabold mb-10 text-center">Welcome</h1>
 
       {/* Container for Director Section and Quote */}
       <div className="flex md:flex-row flex-col justify-start md:justify-around items-center  w-full bg-gray-100 p-8 rounded-lg shadow-md">

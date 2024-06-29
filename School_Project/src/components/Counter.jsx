@@ -15,7 +15,7 @@ const Counter = () => {
   return (
     <div className="flex items-center justify-center w-full">
       <div className="bg-gray-300 shadow-md text-black w-full py-5">
-        <div className="flex justify-center items-center">
+        {/* <div className="flex justify-center items-center">
           <div className="w-full md:w-1/2 border bg-white rounded-lg shadow-md p-4">
             <div className="flex items-center justify-center mb-4">
               <Trophy size={32} className="mr-2 text-blue-700" />
@@ -23,7 +23,7 @@ const Counter = () => {
             </div>
             <Slider images={images} />
           </div>
-        </div>
+        </div> */}
         <div className="flex justify-center items-center mt-4 md:mt-0">
           <ScrollTrigger
             style={{ width: "100%" }}
@@ -31,19 +31,19 @@ const Counter = () => {
           >
             <div className="flex md:flex-row flex-col items-center justify-center gap-5 md:gap-48 text-lg md:text-xl rounded-lg shadow-md p-4">
               <CounterItem
-                count={50}
+                count={230}
                 label="Students"
                 icon={<GraduationCap size={40} className="text-blue-700" />}
                 counterOn={counterOn}
               />
               <CounterItem
-                count={300}
+                count={18}
                 label="Faculty"
                 icon={<User size={40} className="text-blue-700" />}
                 counterOn={counterOn}
               />
               <CounterItem
-                count={1000}
+                count={22}
                 label="Staff"
                 icon={<Users size={40} className="text-blue-700" />}
                 counterOn={counterOn}

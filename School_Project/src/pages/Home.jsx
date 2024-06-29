@@ -8,6 +8,9 @@ import ScrollToTop from '../utils/ScrollToTop'
 import SocialMediaLinks from '../utils/SideLinks'
 import AboutUs from '../components/AboutUs'
 import Mission from '../components/Mission'
+import Gallery from '../components/Gallery'
+import ContactUs from '../components/Contactus'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
@@ -22,7 +25,10 @@ const Home = () => {
         </MaxWidthWrapper>
         <MaxWidthWrapper>
         <AboutUs/>
+        <Gallery/>
+        <ContactUs/>
         </MaxWidthWrapper>
+        <Footer/>
     </div>
   )
 }
