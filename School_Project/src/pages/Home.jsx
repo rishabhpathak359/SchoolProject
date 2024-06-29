@@ -7,6 +7,7 @@ import MaxWidthWrapper from '../components/MaxWidthWrapper'
 import ScrollToTop from '../utils/ScrollToTop'
 import SocialMediaLinks from '../utils/SideLinks'
 import AboutUs from '../components/AboutUs'
+import Mission from '../components/Mission'
 
 const Home = () => {
   return (
