@@ -4,7 +4,7 @@ import VideoContainer from '../components/VideoContainer'
 import Counter from '../components/Counter'
 import Welcome from '../components/Welcome'
 import MaxWidthWrapper from '../components/MaxWidthWrapper'
-import SocialMediaLinks from '../utils/SideLinks'
+import ScrollToTop from '../utils/ScrollToTop'
 import AboutUs from '../components/AboutUs'
 import Gallery from '../components/Gallery'
 import ContactUs from '../components/Contactus'
@@ -13,6 +13,7 @@ import Footer from '../components/Footer'
 const Home = () => {
   return (
     <div>
+      <ScrollToTop/>
         <Navbar/>
         <VideoContainer/>
         <Counter/>
