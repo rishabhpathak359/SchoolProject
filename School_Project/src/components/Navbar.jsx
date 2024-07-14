@@ -13,7 +13,7 @@ import LandCertificate from '../assets/Cbse_Corner/LandCertificate.pdf';
 import SocietyRegistration from '../assets/Cbse_Corner/SocietyRegistration.pdf';
 import SafeDrinkingAndSanitary from '../assets/Cbse_Corner/SafeDrinking.pdf';
 import Mandatory from '../assets/Cbse_Corner/MandatoryPublicDisclosure.pdf';
-import Self from '../assets/Cbse_Corner/SelfDeclaration.pdf';
+import Self from '../assets/Cbse_Corner/SelfCertification.pdf';
 import NOCFromState from '../assets/Cbse_Corner/NOCFromStateGovernment.pdf';
 
 const Navbar = () => {
